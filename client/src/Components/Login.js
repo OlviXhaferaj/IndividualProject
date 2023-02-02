@@ -21,7 +21,6 @@ const Login = ({setIsLoggedin, setRole, setUserName}) => {
             withCredentials:true
         })
         .then((res) =>{
-            console.log(res, 'this is the res.cookie');
             setRole(res.data.userRole);
             setIsLoggedin(true);
             setUserName(res.data.userLoggedIn);
