@@ -1,10 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Home = ({role}) => {
+const Home = ({role, userName, isLoggedin}) => {
     return (
         <div className='header'>
             <div className='container'>
+
+            
                 <div className='banner-text'>
                     <div className='text-area'>
                         <span>M</span>

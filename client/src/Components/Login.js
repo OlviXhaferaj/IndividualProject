@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import axios from "axios";
 import {useNavigate} from 'react-router-dom';
 
-const Login = ({setIsLoggedin, setRole, isLoggedin}) => {
+const Login = ({setIsLoggedin, setRole, setUserName}) => {
     const [email,setEmail] =useState("");
     const [password,setPassword] =useState("");
     const [user, setUser] = useState([]);
@@ -24,7 +24,7 @@ const Login = ({setIsLoggedin, setRole, isLoggedin}) => {
             console.log(res, 'this is the res.cookie');
             setRole(res.data.userRole);
             setIsLoggedin(true);
-            localStorage.setItem('user', res.data);
+            setUserName(res.data.userLoggedIn);
             navigate('/home');
         })
         .catch(err =>{

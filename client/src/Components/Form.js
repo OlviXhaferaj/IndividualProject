@@ -60,7 +60,7 @@ const Form = () => {
         navigate('/products')
     }
     return (
-        <div className='col-6 mx-auto'>
+        <div >
             <form onSubmit={onSubmitHandler}>
 
                 <div>
@@ -69,43 +69,49 @@ const Form = () => {
 
 
                 <div>
-                    {
-                        image?
-                        <div  className='col-6 mx-auto'>
-                            <img src={image}/>
-                        </div>
-                        : null
-                    }
-                    
+                        {
+                            image?
+                            <div  className='col-6 mx-auto'>
+                                <img src={image}/>
+                            </div>
+                            : null
+                        }
                     <label className="sr-only">Choose an image</label><br/>
-                    <FileBase64
+                    <FileBase64 
                         multiple={false}
                         onDone={({base64}) => setImage(base64)} 
                     /><br/>
                     
 
-                    <label className="sr-only  input64">Name of the instrument</label><br/>
-                    <input className="form-control mx-sm-3  input64" type={'text'} onChange={(e) => setInstrument(e.target.value)}/><br/>
-                    <label className="sr-only">Intrument Type</label><br/>
-                    {/* <input className="form-control mx-sm-3" type={'text'} onChange={(e) => setType(e.target.value)}/><br/> */}
-                    <select className='form-select' onChange={(e) => setType(e.target.value)}>
-                        <option></option>
-                        <option value="String">String</option>
-                        <option value="Percussion">Percussion</option>
-                        <option value="Woodwinds">Woodwinds</option>
-                        <option value="Brass">Brass</option>
-                        <option value="Keyboards">Keyboards</option>
-                    </select><br/>
-                    <label className="sr-only">Quantity</label><br/>
-                    <input className="form-control mx-sm-3" type={'number'} onChange={(e) => setQuantity(e.target.value)}/><br/>
-                    <label className="sr-only">Set Price</label><br/>
-                    <input className="form-control mx-sm-3" type={'number'} onChange={(e) => setPrice(e.target.value)} placeholder={'Price in Dollars $'}/><br/>
-                    <label className="sr-only">Brand</label><br/>
-                    <input className="form-control mx-sm-3" type={'text'} onChange={(e) => setBrand(e.target.value)}/><br/>
-                    <label className="sr-only">Product Description</label><br/>
-                    <textarea className="form-control mx-sm-3" type={'text'} onChange={(e) => setDescription(e.target.value)}/>
-                    <input className="btn btn-success" type={'submit'} value={'Add Product'}/>
-                    <button className="btn btn-dark" onClick={(e) => cancelHandle()}>Cancel</button>
+                    <div className='form'>
+
+                        <div className='content2' >
+                            <label className="sr-only  input64">Name of the instrument</label><br/>
+                            <input className="form-control mx-sm-3  input64" type={'text'} onChange={(e) => setInstrument(e.target.value)}/><br/>
+                            <label className="sr-only">Intrument Type</label><br/>
+                            {/* <input className="form-control mx-sm-3" type={'text'} onChange={(e) => setType(e.target.value)}/><br/> */}
+                            <select className='form-select' onChange={(e) => setType(e.target.value)}>
+                                <option></option>
+                                <option value="String">String</option>
+                                <option value="Percussion">Percussion</option>
+                                <option value="Woodwinds">Woodwinds</option>
+                                <option value="Brass">Brass</option>
+                                <option value="Keyboards">Keyboards</option>
+                            </select><br/>
+                            <label className="sr-only">Quantity</label><br/>
+                            <input className="form-control mx-sm-3" type={'number'} onChange={(e) => setQuantity(e.target.value)}/><br/>
+                            <input className="btn btn-success" type={'submit'} value={'Add Product'}/>
+                        </div>
+                        <div className='content2'>
+                            <label className="sr-only">Set Price</label><br/>
+                            <input className="form-control mx-sm-3" type={'number'} onChange={(e) => setPrice(e.target.value)} placeholder={'Price in Dollars $'}/><br/>
+                            <label className="sr-only">Brand</label><br/>
+                            <input className="form-control mx-sm-3" type={'text'} onChange={(e) => setBrand(e.target.value)}/><br/>
+                            <label className="sr-only">Product Description</label><br/>
+                            <textarea className="form-control mx-sm-3" type={'text'} onChange={(e) => setDescription(e.target.value)}/>
+                            <button className="btn btn-dark" onClick={(e) => cancelHandle()}>Cancel</button>
+                        </div>
+                    </div>
                 </div>
 
             </form>

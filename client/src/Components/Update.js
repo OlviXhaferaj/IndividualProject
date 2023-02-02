@@ -88,7 +88,7 @@ const Update = () => {
 
             {
                 foundItem ?
-                <div className='col-6 mx-auto'>
+                <div >
                     <h2>Edit {staticInstrument}</h2>
                     {errors.map((err, index) => <p style={{color:'red'}} key={index}>This is an error: {err}</p>)}
 
@@ -107,34 +107,44 @@ const Update = () => {
                         </div>
                         : null
                     }
+
                         <label className="sr-only">Image</label><br/>
-                        <input value={image}  className="form-control mx-sm-3" type={'text'} onChange={(e) => setImage(e.target.value)}/><br/>
                         <FileBase64
                             multiple={false}
                             onDone={({base64}) => setImage(base64)}
                         />
-                        <label className="sr-only">Name of the instrument</label><br/>
-                        <input value={instrument}  className="form-control mx-sm-3" type={'text'} onChange={(e) => setInstrument(e.target.value)}/><br/>
-                        <label className="sr-only">Intrument Type</label><br/>
-                        <select value={type}  className='form-select' onChange={(e) => setType(e.target.value)}>
-                            <option></option>
-                            <option value="String">String</option>
-                            <option value="Percussion">Percussion</option>
-                            <option value="Woodwinds">Woodwinds</option>
-                            <option value="Brass">Brass</option>
-                            <option value="Keyboards">Keyboards</option>
-                        </select><br/>
-                        <label className="sr-only">Quantity</label><br/>
-                        <input value={quantity}  className="form-control mx-sm-3" type={'number'} onChange={(e) => setQuantity(e.target.value)}/><br/>
-                        <label className="sr-only">Price</label><br/>
-                        <input value={price}  className="form-control mx-sm-3" type={'number'} onChange={(e) => setPrice(e.target.value)}/><br/>
-                        <label className="sr-only">Brand</label><br/>
-                        <input value={brand}  className="form-control mx-sm-3" type={'text'} onChange={(e) => setBrand(e.target.value)}/><br/>
-                        
-                        <label className="sr-only">Product Description</label><br/>
-                        <input value={description}  className="form-control mx-sm-3" type={'text'} onChange={(e) => setDescription(e.target.value)}/><br/>
-                        <input className="btn btn-success" type={'submit'} value={'Update Product'}/>
-                        <button className="btn btn-dark" onClick={(e) => cancelHandle()}>Cancel</button>
+                        <div className='form'>
+                            <div className='content2'>
+                                
+                                <label className="sr-only">Name of the instrument</label><br/>
+                                <input value={instrument}  className="form-control mx-sm-3" type={'text'} onChange={(e) => setInstrument(e.target.value)}/><br/>
+                                <label className="sr-only">Intrument Type</label><br/>
+                                <select value={type}  className='form-select' onChange={(e) => setType(e.target.value)}>
+                                    <option></option>
+                                    <option value="String">String</option>
+                                    <option value="Percussion">Percussion</option>
+                                    <option value="Woodwinds">Woodwinds</option>
+                                    <option value="Brass">Brass</option>
+                                    <option value="Keyboards">Keyboards</option>
+                                </select>
+                                <label className="sr-only">Quantity</label><br/>
+                                <input value={quantity}  className="form-control mx-sm-3" type={'number'} onChange={(e) => setQuantity(e.target.value)}/><br/>
+                                <input className="btn btn-success" type={'submit'} value={'Update Product'}/>
+
+                            </div>
+
+                            <div className='content2'>
+
+                                <label className="sr-only">Price</label><br/>
+                                <input value={price}  className="form-control mx-sm-3" type={'number'} onChange={(e) => setPrice(e.target.value)}/><br/>
+                                <label className="sr-only">Brand</label><br/>
+                                <input value={brand}  className="form-control mx-sm-3" type={'text'} onChange={(e) => setBrand(e.target.value)}/><br/>
+                            
+                                <label className="sr-only">Product Description</label><br/>
+                                <input value={description}  className="form-control mx-sm-3" type={'text'} onChange={(e) => setDescription(e.target.value)}/><br/>
+                                <button className="btn btn-dark" onClick={(e) => cancelHandle()}>Cancel</button>
+                            </div>
+                        </div>
                     </div>
 
                 </form>

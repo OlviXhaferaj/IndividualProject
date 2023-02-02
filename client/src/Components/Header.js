@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const Header = ({isLoggedin, setIsLoggedin, role, setRole}) => {
+const Header = ({userName,isLoggedin, setIsLoggedin, role, setRole}) => {
     const [active, setActive] = useState("nav__menu")
 
     const [toggleIcon, setToggleIcon] = useState('nav__toggler')
@@ -39,7 +39,10 @@ const Header = ({isLoggedin, setIsLoggedin, role, setRole}) => {
 
     return (
             <nav className={'nav'}>
-                <NavLink className={'nav__brand'}>Store name</NavLink>
+                
+                <h2 className='font-weight-bold text-light'>Store name</h2>
+            
+                {/* <NavLink className={'nav__brand'}>Store name</NavLink> */}
                 <ul className={active}>
                     <li className='nav__item'><NavLink to={'/home'} className={'brand'}>Home</NavLink></li>
                     {   

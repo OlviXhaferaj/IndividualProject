@@ -50,18 +50,18 @@ const List = () => {
         
     return (
         <div className='div-list'>
-            <h2>These are all of your products</h2>
+            <h2 >These are all of your products</h2>
             {/* <NavLink to={'/store/new'}>Add a new product to the store</NavLink> */}
             
             
-            <label>Search for your product</label>
-            <select onChange={(e) => setSelect(e.target.value)}>
-                <option value={"Instrument"}>Instrument name</option>
-                <option value={"Type"}>Type</option>
-                <option value={"Brand"}>Brand</option>
-            </select>
-            <input type={'text'} onChange={(e)=> setQuery(e.target.value)} placeholder={'Search...'}/>
-            
+                <label >Search for your product</label>
+                <select  onChange={(e) => setSelect(e.target.value)}>
+                    <option value={"Instrument"}>Instrument name</option>
+                    <option value={"Type"}>Type</option>
+                    <option value={"Brand"}>Brand</option>
+                </select>
+                <input type={'text'} onChange={(e)=> setQuery(e.target.value)} placeholder={'Search...'}/>
+                
         <table className="table table-striped table-dark">
             <thead>
                 <tr>
@@ -85,8 +85,8 @@ const List = () => {
                                 <td>{item.price}</td>
                                 <td>{item.brand}</td>
                                 <td>
-                                        <button onClick={()=>detailsHandle(item._id)} className="btn btn-primary">Details</button>
-                                        <button onClick={()=>updateHandle(item._id)} className="btn btn-primary">Edit</button>
+                                        <button onClick={()=>detailsHandle(item._id)} className="btn btn-dark">Details</button>
+                                        <button onClick={()=>updateHandle(item._id)} className="btn btn-warning">Edit</button>
                                 </td>
                         </tr>
                     </tbody>
