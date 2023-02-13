@@ -25,6 +25,7 @@ const Login = ({setIsLoggedin, setRole, setUserName}) => {
             setIsLoggedin(true);
             setUserName(res.data.userLoggedIn);
             navigate('/home');
+            console.log('this is the other test')
         })
         .catch(err =>{
             console.log(err.response);
